@@ -1,0 +1,4 @@
+npm create vite
+npx eslint --init
+npm install -D eslint-plugin-prettier@latest prettier eslint-config-prettier
+npm i sass sass-loader stylelint postcss postcss-scss postcss-html stylelint-config-prettier stylelint-config-recess-order stylelint-config-recommended-scss stylelint-config-standard stylelint-config-standard-scss stylelint-config-standard-vue stylelint-order stylelint-scss -D --legacy-peer-deps
