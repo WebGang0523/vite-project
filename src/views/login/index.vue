@@ -14,7 +14,7 @@ let loginForm = reactive({
 })
 
 let login = async () => {
-  try{
+  try {
     await useStore.userLogin(loginForm)
     loading.value = true
     $router.push('/')
@@ -23,7 +23,7 @@ let login = async () => {
       message: '登陆成功',
     })
     loading.value = false
-  }catch (e) {
+  } catch (e) {
     loading.value = false
     ElNotification({
       type: 'error',
@@ -31,7 +31,6 @@ let login = async () => {
     })
   }
 }
-
 </script>
 
 <template>
@@ -44,32 +43,32 @@ let login = async () => {
           <el-form :model="loginForm" :rules="rules" ref="loginForms">
             <el-form-item prop="username">
               <el-input
-                  :prefix-icon="User"
-                  v-model="loginForm.username"
-                  clearable
-                  placeholder="Username"
-                  size="large"
+                :prefix-icon="User"
+                v-model="loginForm.username"
+                clearable
+                placeholder="Username"
+                size="large"
               ></el-input>
             </el-form-item>
             <el-form-item prop="password">
               <el-input
-                  type="password"
-                  :prefix-icon="Lock"
-                  show-password
-                  v-model="loginForm.password"
-                  size="large"
-                  placeholder="Password"
-                  clearable
+                type="password"
+                :prefix-icon="Lock"
+                show-password
+                v-model="loginForm.password"
+                size="large"
+                placeholder="Password"
+                clearable
               ></el-input>
             </el-form-item>
           </el-form>
           <el-form-item>
             <el-button
-                :loading="loading"
-                class="login_btn"
-                type="primary"
-                size="default"
-                @click="login"
+              :loading="loading"
+              class="login_btn"
+              type="primary"
+              size="default"
+              @click="login"
             >
               登录
             </el-button>
