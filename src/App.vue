@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { Edit } from '@element-plus/icons-vue'
 </script>
 
 <template>
   <div>
-    <el-button type="danger" size="large" :icon="Edit">xucg</el-button>
+    <SvgIcon name="vue" width="200px" height="200px"></SvgIcon>
   </div>
 </template>
 
