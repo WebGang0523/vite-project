@@ -1,10 +1,4 @@
-/*
- * @Description: Stay hungry，Stay foolish
- * @Author: Huccct
- * @Date: 2023-05-18 11:41:46
- * @LastEditors: Huccct
- * @LastEditTime: 2023-05-20 10:50:25
- */
+
 function createUserList() {
   return [
     {

@@ -2,6 +2,7 @@
 export interface LoginFormData {
   username?: string
   password?: string
+  verifyCode?: string
 }
 
 interface ResponseData {
@@ -23,6 +24,7 @@ export interface UserInfoResponseData extends ResponseData {
     buttons: string[]
     roles: string[]
     name: string
-    avatar: string
+    avatar: string,
+    message?: string
   }
 }
