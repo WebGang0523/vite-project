@@ -1,6 +1,10 @@
 import { defineStore } from 'pinia'
 import { reqLogin, reqUserInfo } from '@/api/user'
-import type { LoginFormData, LoginResponseData, UserInfoResponseData } from '@/api/user/type'
+import type {
+  LoginFormData,
+  LoginResponseData,
+  UserInfoResponseData,
+} from '@/api/user/type'
 import type { UserState } from './types/types'
 import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
 import { constantRoute, asyncRoute } from '@/router/routes'
@@ -21,7 +25,7 @@ function filterAsyncRoute(asyncRoute: any, routes: any) {
 }
 
 let useUserStore = defineStore('User', {
-  state: ():UserState => {
+  state: (): UserState => {
     return {
       token: GET_TOKEN(),
       menuRoutes: constantRoute,
@@ -53,13 +57,13 @@ let useUserStore = defineStore('User', {
           cloneDeep(asyncRoute),
           res.data.routes,
         )
-        this.menuRoutes = [...constantRoute, ...userAsyncRoute];
+        this.menuRoutes = [...constantRoute, ...userAsyncRoute]
         userAsyncRoute.forEach((route: any) => {
           router.addRoute(route)
         })
 
         return 'ok'
-      }else{
+      } else {
         return Promise.reject(new Error(res.data.message as string))
       }
     },

@@ -32,7 +32,7 @@ let LayOutSettingStore = useLayOutSettingStore()
     </el-aside>
 
     <el-container class="container">
-<!--      <TabBar style="width: 100%" />-->
+      <!--      <TabBar style="width: 100%" />-->
       <el-main
         :style="{
           left: !LayOutSettingStore.isCollapse ? '200px' : '56px',
