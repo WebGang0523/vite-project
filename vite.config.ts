@@ -1,4 +1,4 @@
-import { defineConfig,loadEnv } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 // 引入svg
@@ -6,7 +6,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command,mode }) => {
+export default defineConfig(({ command, mode }) => {
   console.log(mode)
   let env = loadEnv(mode, process.cwd())
   console.log(env)
