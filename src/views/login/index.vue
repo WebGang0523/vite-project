@@ -13,7 +13,7 @@ let $route = useRoute()
 let useStore = useUserStore()
 let loading = ref(false)
 let loginForm = reactive({
-  username: 'admin',
+  username: 'xucg',
   password: '123456',
   verifyCode: '1234',
 })
