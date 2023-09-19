@@ -12,6 +12,8 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import '@/styles/index.scss'
 import router from '@/router'
 import pinia from '@/store'
+import './permission'
+import 'default-passive-events'
 
 const app = createApp(App)
 

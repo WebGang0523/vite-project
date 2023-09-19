@@ -2,6 +2,7 @@
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import Main from './main/index.vue'
+import TabBar from './tabbar/index.vue'
 import useUserStore from '@/store/modules/user'
 import useLayOutSettingStore from '@/store/modules/setting'
 import { useRoute } from 'vue-router'
@@ -32,7 +33,7 @@ let LayOutSettingStore = useLayOutSettingStore()
     </el-aside>
 
     <el-container class="container">
-      <!--      <TabBar style="width: 100%" />-->
+      <TabBar style="width: 100%" />
       <el-main
         :style="{
           left: !LayOutSettingStore.isCollapse ? '200px' : '56px',

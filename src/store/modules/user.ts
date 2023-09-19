@@ -6,7 +6,7 @@ import type {
   UserInfoResponseData,
 } from '@/api/user/type'
 import type { UserState } from './types/types'
-import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
+import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
 import { constantRoute, asyncRoute } from '@/router/routes'
 import router from '@/router'
 
@@ -50,7 +50,7 @@ let useUserStore = defineStore('User', {
       let res: UserInfoResponseData = await reqUserInfo()
 
       if (res.code === 200) {
-        this.username = res.data.name as string
+        this.username = res.data.username as string
         this.avatar = res.data.avatar as string
 
         let userAsyncRoute = filterAsyncRoute(
@@ -66,6 +66,13 @@ let useUserStore = defineStore('User', {
       } else {
         return Promise.reject(new Error(res.data.message as string))
       }
+    },
+
+    async userLogout() {
+      this.token = ''
+      this.username = ''
+      this.avatar = ''
+      REMOVE_TOKEN()
     },
   },
   getters: {},

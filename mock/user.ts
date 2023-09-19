@@ -4,12 +4,12 @@ function createUserList() {
       userId: 1,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'admin',
+      username: 'xucg',
       password: '123456',
       desc: '平台管理员',
       roles: ['平台管理员'],
       buttons: ['cuser.detail'],
-      routes: ['home'],
+      routes: ['home', 'Acl', 'User', 'Product', 'Trademark'],
       token: 'Admin Token',
     },
     {
@@ -62,7 +62,7 @@ export default [
         return { code: 201, data: { message: '获取用户信息失败' } }
       }
       //如果有返回成功信息
-      return { code: 200, data: { checkUser } }
+      return { code: 200, data: checkUser }
     },
   },
 ]

@@ -2,13 +2,14 @@
 import { reactive, ref, Ref } from 'vue'
 import { User, Lock, Warning } from '@element-plus/icons-vue'
 import useUserStore from '@/store/modules/user'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { ElNotification } from 'element-plus'
 import { getTime } from '@/utils/time'
 import Identify from '@/components/VerifyCode/index.vue'
 
 let loginForms = ref()
 let $router = useRouter()
+let $route = useRoute()
 let useStore = useUserStore()
 let loading = ref(false)
 let loginForm = reactive({
@@ -40,7 +41,8 @@ let login = async () => {
   try {
     await useStore.userLogin(loginForm)
     loading.value = true
-    $router.push('/')
+    let redirect: string = $route.query.redirect as string
+    $router.push({ path: redirect || '/' })
     ElNotification({
       type: 'success',
       message: '登陆成功',
